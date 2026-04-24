@@ -140,41 +140,43 @@ html {
   scroll-behavior: smooth;
 }
 
-/* SOCIAL GRID (3 COLUMNS) */
+/* GRID LAYOUT (FORCES 3 COLUMNS) */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 30px;
   margin-top: 30px;
 }
 
-/* SOCIAL CARD */
+/* EACH CARD */
 .social-card {
   background: #1e293b;
-  padding: 25px;
-  border-radius: 15px;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
+}
+
+/* ONLY LINK PART (NOT DESCRIPTION) */
+.social-link {
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: block;
+  display: inline-block;
 }
 
-/* REMOVE default link styling */
-.social-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* ICON INSIDE CARD */
-.social-card .social-icon {
+/* ICON SIZE */
+.social-icon {
   width: 60px;
   height: 60px;
-  margin: 15px auto;
-  display: block;
+  margin: 10px 0;
 }
 
-/* MOBILE RESPONSIVE (STACK) */
+/* HOVER EFFECT */
+.social-link:hover .social-icon {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+/* MOBILE (STACK ON SMALL SCREENS) */
 @media (max-width: 800px) {
   .social-grid {
     grid-template-columns: 1fr;
