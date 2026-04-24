@@ -1,11 +1,11 @@
-/* Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
+/* BODY */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #0f172a;
@@ -72,11 +72,32 @@ p {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* IMAGES */
+/* GENERAL IMAGES (for normal content only) */
 img {
   margin-top: 15px;
   border-radius: 12px;
   max-width: 100%;
+  height: auto;
+}
+
+/* SOCIAL ICONS (FIXED SIZE BUTTONS) */
+.social-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+/* KEEP ICONS INLINE (IMPORTANT FIX) */
+a img.social-icon {
+  display: inline-block;
+}
+
+/* HOVER EFFECT */
+.social-icon:hover {
+  transform: scale(1.15);
 }
 
 /* LINKS */
@@ -88,14 +109,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* IFRAME (resume) */
+/* IFRAME */
 iframe {
   margin-top: 20px;
   border-radius: 10px;
   border: none;
 }
 
-/* HOVER EFFECT */
+/* CARD HOVER */
 .container > h2:hover,
 .container > p:hover {
   transform: translateY(-3px);
@@ -113,18 +134,8 @@ iframe {
     margin: 20px;
   }
 }
+
+/* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
-}
-.social-icon {
-  width: 50px !important;
-  height: 50px !important;
-  object-fit: contain;
-  margin: 10px 0;
-  cursor: pointer;
-  display: block;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
 }
