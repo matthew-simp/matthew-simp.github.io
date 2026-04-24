@@ -139,3 +139,44 @@ iframe {
 html {
   scroll-behavior: smooth;
 }
+
+/* SOCIAL GRID (3 COLUMNS) */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* SOCIAL CARD */
+.social-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+}
+
+/* REMOVE default link styling */
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ICON INSIDE CARD */
+.social-card .social-icon {
+  width: 60px;
+  height: 60px;
+  margin: 15px auto;
+  display: block;
+}
+
+/* MOBILE RESPONSIVE (STACK) */
+@media (max-width: 800px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
