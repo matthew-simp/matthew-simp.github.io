@@ -10,7 +10,7 @@
 <nav>
   <a href="index.html">About Me</a>
   <a href="resume.html">Resume</a>
-  <a href="interests.html">Development</a>
+  <a href="development.html">Development</a>
   <a href="projects.html">Projects</a>
   <a href="social.html">Social Media</a>
 </nav>
@@ -23,7 +23,25 @@
 This section includes my resume, which highlights my education, technical skills, and academic experience. It reflects the work I have completed so far and provides an overview of my qualifications.
 </p>
 
-<iframe src="images/Simpson_Matthew_Resume.pdf" width="100%" height="600px"></iframe>
+<div style="text-align:center; margin-top:24px;">
+  <canvas id="resume-preview" style="max-width:100%; border-radius:10px; box-shadow:0 4px 24px rgba(0,0,0,0.5); display:block; margin:0 auto;"></canvas>
+  <a href="images/Simpson_Matthew_Resume.pdf" download style="display:inline-block; margin-top:20px; padding:10px 28px; background:#38bdf8; color:#0f172a; border-radius:8px; font-weight:600; text-decoration:none;">Download Resume</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  pdfjsLib.getDocument('images/Simpson_Matthew_Resume.pdf').promise.then(function(pdf) {
+    pdf.getPage(1).then(function(page) {
+      var scale = 1.8;
+      var viewport = page.getViewport({ scale: scale });
+      var canvas = document.getElementById('resume-preview');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport });
+    });
+  });
+</script>
 
 </div>
 
